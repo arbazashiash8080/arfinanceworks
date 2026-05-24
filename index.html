@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Raza | Senior Accountant & Finance Professional</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --ivory: #F5EFE4;
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dark: #9C7A2E;
+      --charcoal: #1A1A2E;
+      --slate: #2E3A59;
+      --muted: #6B7280;
+      --accent-teal: #1B6CA8;
+      --accent-green: #2D7D46;
+      --white: #FFFFFF;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 60px;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: all 0.3s;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      transition: all 0.3s;
+    }
+
+    .nav-links.active {
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100dvh;
+      background: var(--cream);
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      z-index: 999;
+      padding: 80px 24px;
+      overflow-y: auto;
+    }
+
+    .nav-links.active a {
+      font-size: 1.2rem;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1.5px;
+      background: var(--gold);
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-name span {
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-title {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 440px;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 14px 36px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      box-shadow: 0 12px 32px rgba(201, 168, 76, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      padding: 14px 36px;
+      border: 1.5px solid var(--charcoal);
+      color: var(--charcoal);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    /* ─── HERO RIGHT / ILLUSTRATION ─── */
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(135deg, #1A1A2E 0%, #2E3A59 60%, #1B6CA8 100%);
+    }
+
+    .hero-bg-pattern::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(201, 168, 76, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(27, 108, 168, 0.2) 0%, transparent 50%);
+    }
+
+    /* Profile photo placeholder + frame */
+    .profile-frame-wrapper {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-frame {
+      width: 280px;
+      height: 320px;
+      border: 3px solid rgba(201, 168, 76, 0.6);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+    }
+
+    .profile-frame::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: -12px;
+      bottom: -12px;
+      border: 1.5px solid rgba(201, 168, 76, 0.3);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
+    /* The actual upload zone for profile photo */
+    .profile-upload-zone {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #1f2d4a 0%, #2a3f68 100%);
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .profile-upload-zone:hover {
+      background: linear-gradient(145deg, #253358 0%, #30497a 100%);
+    }
+
+    .profile-upload-zone img.uploaded-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: none;
+    }
+
+    .profile-upload-zone.has-photo .upload-placeholder {
+      display: none;
+    }
+
+    .profile-upload-zone.has-photo img.uploaded-photo {
+      display: block;
+    }
+
+    .upload-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .upload-placeholder svg {
+      opacity: 0.5;
+    }
+
+    .upload-placeholder p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .upload-placeholder span {
+      font-size: 0.65rem;
+      color: var(--gold-light);
+    }
+
+    #photoInput {
+      display: none;
+    }
+
+    .profile-name-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      backdrop-filter: blur(8px);
+      padding: 12px 24px;
+      border-radius: 2px;
+      text-align: center;
+    }
+
+    .profile-name-tag h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .profile-name-tag p {
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* Floating finance icons around the hero */
+    .float-badge {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+
+    .float-badge:nth-child(2) {
+      animation-delay: -1.5s;
+    }
+
+    .float-badge:nth-child(3) {
+      animation-delay: -3s;
+    }
+
+    .float-badge .badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    @keyframes floatBadge {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .badge-1 {
+      top: 15%;
+      left: 8%;
+    }
+
+    .badge-2 {
+      bottom: 20%;
+      left: 5%;
+    }
+
+    .badge-3 {
+      top: 50%;
+      right: 5%;
+    }
+
+    /* ─── SECTION STYLES ─── */
+    section {
+      padding: 100px 60px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 64px;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-svg {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-highlight-card {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--gold);
+      color: white;
+      padding: 20px 28px;
+      border-radius: 4px;
+      box-shadow: 0 16px 48px rgba(201, 168, 76, 0.4);
+    }
+
+    .about-highlight-card .big-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      display: block;
+    }
+
+    .about-highlight-card .big-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-top: 4px;
+    }
+
+    .about-text {
+      padding: 20px 0;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .tag {
+      padding: 7px 18px;
+      background: var(--ivory);
+      color: var(--slate);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      font-size: 0.78rem;
+      font-weight: 500;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── EXPERIENCE ─── */
+    #experience {
+      background: var(--cream);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 60px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 8px;
+      bottom: 8px;
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 60px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -48px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 3px var(--gold);
+    }
+
+    .timeline-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 36px 40px;
+      box-shadow: var(--shadow-card);
+      border-left: 3px solid var(--gold);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .timeline-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-company {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .timeline-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-top: 4px;
+    }
+
+    .timeline-period {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--ivory);
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .timeline-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .skill-chip {
+      padding: 4px 14px;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(201, 168, 76, 0.05));
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold-dark);
+      font-size: 0.73rem;
+      font-weight: 600;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── SKILLS ─── */
+    #skills {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 100px 60px;
+    }
+
+    #skills .section-title {
+      color: var(--white);
+    }
+
+    #skills .section-sub {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    #skills .section-label {
+      color: var(--gold-light);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .skill-category-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 36px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .skill-category-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(201, 168, 76, 0.3);
+    }
+
+    .skill-cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+    }
+
+    .skill-bar-item {
+      margin-bottom: 18px;
+    }
+
+    .skill-bar-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .skill-bar-track {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.17, 0.67, 0.35, 1.0);
+    }
+
+    /* Radar / donut chart area */
+    .chart-canvas-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 16px;
+    }
+
+    /* ─── EDUCATION ─── */
+    #education {
+      background: var(--ivory);
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 28px;
+    }
+
+    .edu-card {
+      grid-column: span 2;
+      background: var(--white);
+      padding: 36px;
+      border-radius: 4px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    /* Perfect wrap: 3 on top, 2 centered at bottom */
+    .edu-card:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    .edu-card:nth-child(5) {
+      grid-column: 4 / span 2;
+    }
+
+    @media (max-width: 1024px) {
+      .edu-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .edu-card {
+        grid-column: span 2;
+      }
+
+      .edu-card:nth-child(4),
+      .edu-card:nth-child(5) {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-card,
+      .edu-card:nth-child(4),
+      .edu-card:nth-child(5) {
+        grid-column: auto;
+      }
+    }
+
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+    }
+
+    .edu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .edu-year {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .edu-degree {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .edu-uni {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .edu-grade {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--ivory);
+      padding: 6px 16px;
+      border-radius: 2px;
+    }
+
+    .edu-grade .grade-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .edu-grade .grade-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .edu-icon {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      opacity: 0.06;
+      font-size: 4rem;
+    }
+
+    /* ─── ACHIEVEMENTS ─── */
+    #achievements {
+      background: var(--white);
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .achievement-card {
+      padding: 32px;
+      border-radius: 4px;
+      background: var(--cream);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .achievement-card:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(201, 168, 76, 0.3);
+    }
+
+    .achievement-card:hover .ach-title,
+    .achievement-card:hover .ach-subtitle {
+      color: white;
+    }
+
+    .achievement-card:hover .ach-icon svg {
+      fill: rgba(255, 255, 255, 0.9);
+    }
+
+    .ach-icon {
+      margin-bottom: 16px;
+    }
+
+    .ach-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      transition: color 0.3s;
+    }
+
+    .ach-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+
+    /* ─── AI VISUAL STRIP ─── */
+    #visual-strip {
+      background: var(--charcoal);
+      padding: 0;
+      overflow: hidden;
+      height: 320px;
+      position: relative;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .strip-panel {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strip-panel svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .strip-label {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate) 100%);
+      color: white;
+      text-align: center;
+      padding: 120px 60px;
+    }
+
+    #contact .section-label {
+      color: var(--gold-light);
+    }
+
+    #contact .section-title {
+      color: var(--white);
+      margin-bottom: 48px;
+    }
+
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px 28px;
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+      min-width: 220px;
+    }
+
+    .contact-card:hover {
+      background: rgba(201, 168, 76, 0.2);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(201, 168, 76, 0.2);
+    }
+
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(201, 168, 76, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-card-info {
+      text-align: left;
+    }
+
+    .contact-card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 2px;
+    }
+
+    .contact-card-value {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 24px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--cream);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* ─── CHART SECTION ─── */
+    #metrics {
+      background: var(--ivory);
+      padding: 100px 60px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .chart-container {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .chart-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--charcoal);
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    /* Expertise radar */
+    .expertise-list {
+      margin-top: 24px;
+    }
+
+    .exp-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .exp-icon-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    .exp-item-text {
+      flex: 1;
+    }
+
+    .exp-item-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    .exp-item-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .exp-bar {
+      height: 3px;
+      background: var(--ivory);
+      border-radius: 2px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+
+    .exp-bar-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--gold), var(--accent-teal));
+      border-radius: 2px;
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.17, 0.67, 0.35, 1.0);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 24px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-left {
+        padding: 140px 24px 60px;
+        align-items: center;
+      }
+
+      .hero-eyebrow {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .hero-right {
+        height: 400px;
+      }
+
+      .badge-1 {
+        top: 10%;
+        left: 5%;
+      }
+
+      .badge-3 {
+        top: 40%;
+        right: 5%;
+      }
+
+      section {
+        padding: 80px 24px;
+      }
+
+      #about {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .timeline {
+        padding-left: 36px;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-dot {
+        left: -32px;
+      }
+
+      .timeline-card {
+        padding: 24px;
+      }
+
+      #visual-strip {
+        height: auto;
+        flex-wrap: wrap;
+      }
+
+      .strip-panel {
+        flex: 1 1 50%;
+        height: 200px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-cards {
+        gap: 16px;
+      }
+
+      .contact-card {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    /* ─── CERTIFICATES & MODAL ─── */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .cert-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      background: var(--white);
+      aspect-ratio: 3/4;
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      padding: 16px;
+    }
+
+    .cert-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;
+    }
+
+    .cert-card:hover .cert-overlay {
+      opacity: 1;
+    }
+
+    .cert-overlay svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      stroke: white;
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .cert-overlay span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* Modal */
+    .cert-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 40px;
+    }
+
+    .cert-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cert-modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .cert-modal-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .cert-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: white;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+      background: none;
+      border: none;
+    }
+
+    /* Section wrapper max width */
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Parallax decoration */
+    .deco-line {
+      position: absolute;
+      width: 180px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      opacity: 0.4;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      background: var(--white);
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 36px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 4px;
+      padding: 40px;
+      position: relative;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+      border-color: rgba(201, 168, 76, 0.4);
+    }
+
+    .testimonial-card .quote-icon {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-divider {
+      height: 1px;
+      width: 40px;
+      background: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0.4;
+    }
+
+    .testimonial-author {
+      margin-bottom: 16px;
+    }
+
+    .author-name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+    }
+
+    .author-role {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gold-dark);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .testimonial-contact {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(0, 0, 0, 0.06);
+    }
+
+    .testimonial-contact a {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+
+    .testimonial-contact a:hover {
+      color: var(--gold-dark);
+    }
+
+    .testimonial-contact a svg {
+      stroke: var(--gold-dark);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      #testimonials {
+        padding: 80px 24px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .testimonial-card {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ░░ NAV ░░ -->
+  <nav>
+    <div class="nav-logo">Ahmed <span>Raza</span></div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#metrics">Metrics</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Finance Professional</div>
+      <h1 class="hero-name">Ahmed<span>Raza</span></h1>
+      <p class="hero-title">Senior Accountant with 6+ years of experience spanning Canadian & Indian financial systems,
+        ERP platforms, and end-to-end bookkeeping excellence.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" data-count="6">0</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="4">0</div>
+          <div class="hero-stat-label">Companies</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" data-count="8">0</div>
+          <div class="hero-stat-label">ERP Tools</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Get In Touch</a>
+        <a href="#experience" class="btn-outline">View Work</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-bg-pattern"></div>
+
+      <!-- Floating badges -->
+      <div class="float-badge badge-1">
+        <span class="badge-num">MBA</span>Finance
+      </div>
+      <div class="float-badge badge-2">
+        <span class="badge-num">8.86</span>B.COM CGPA
+      </div>
+      <div class="float-badge badge-3">
+        <span class="badge-num">CA</span>Trained
+      </div>
+
+      <div class="profile-frame-wrapper">
+        <div class="profile-frame">
+          <img src="Profile.jpeg" alt="Ahmed Raza Profile"
+            style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+        </div>
+        <div class="profile-name-tag">
+          <h3>Ahmed Raza</h3>
+          <p>Senior Accountant</p>
+        </div>
+      </div>
+
+      <!-- Decorative SVG geometry -->
+      <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:120px;z-index:1;" viewBox="0 0 600 120"
+        preserveAspectRatio="none">
+        <path d="M0,80 Q150,20 300,60 Q450,100 600,40 L600,120 L0,120 Z" fill="rgba(201,168,76,0.08)" />
+        <path d="M0,100 Q200,50 400,80 Q500,95 600,60 L600,120 L0,120 Z" fill="rgba(201,168,76,0.05)" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT ░░ -->
+  <section id="about">
+    <div class="about-visual" data-aos="fade-right">
+      <!-- AI-generated SVG illustration: finance/office scene -->
+      <svg class="about-img-svg" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1A1A2E" />
+            <stop offset="100%" stop-color="#2E3A59" />
+          </linearGradient>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#C9A84C" />
+            <stop offset="100%" stop-color="#E8C97A" />
+          </linearGradient>
+          <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1B6CA8" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#0D3F6E" stop-opacity="0.9" />
+          </linearGradient>
+        </defs>
+        <!-- Background -->
+        <rect width="520" height="380" fill="url(#bgGrad)" rx="4" />
+        <!-- Subtle grid -->
+        <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+          <line x1="0" y1="60" x2="520" y2="60" />
+          <line x1="0" y1="120" x2="520" y2="120" />
+          <line x1="0" y1="180" x2="520" y2="180" />
+          <line x1="0" y1="240" x2="520" y2="240" />
+          <line x1="0" y1="300" x2="520" y2="300" />
+          <line x1="104" y1="0" x2="104" y2="380" />
+          <line x1="208" y1="0" x2="208" y2="380" />
+          <line x1="312" y1="0" x2="312" y2="380" />
+          <line x1="416" y1="0" x2="416" y2="380" />
+        </g>
+        <!-- Desk surface -->
+        <rect x="40" y="260" width="440" height="12" rx="3" fill="#4A3728" opacity="0.8" />
+        <!-- Monitor base -->
+        <rect x="210" y="272" width="100" height="18" rx="3" fill="#3A2E24" opacity="0.9" />
+        <rect x="240" y="258" width="40" height="14" fill="#3A2E24" opacity="0.9" />
+        <!-- Monitor screen -->
+        <rect x="120" y="120" width="280" height="140" rx="8" fill="url(#screenGrad)" />
+        <rect x="128" y="128" width="264" height="124" rx="4" fill="#0A2A4A" />
+        <!-- Screen content: chart bars -->
+        <rect x="148" y="190" width="20" height="48" rx="2" fill="url(#goldGrad)" opacity="0.9" />
+        <rect x="178" y="175" width="20" height="63" rx="2" fill="url(#goldGrad)" opacity="0.9" />
+        <rect x="208" y="160" width="20" height="78" rx="2" fill="url(#goldGrad)" opacity="0.9" />
+        <rect x="238" y="180" width="20" height="58" rx="2" fill="#4AADFF" opacity="0.8" />
+        <rect x="268" y="155" width="20" height="83" rx="2" fill="url(#goldGrad)" opacity="0.9" />
+        <rect x="298" y="172" width="20" height="66" rx="2" fill="url(#goldGrad)" opacity="0.9" />
+        <rect x="328" y="145" width="20" height="93" rx="2" fill="#4AADFF" opacity="0.8" />
+        <!-- Screen top bar -->
+        <rect x="128" y="128" width="264" height="22" rx="4" fill="rgba(255,255,255,0.05)" />
+        <circle cx="143" cy="139" r="4" fill="#FF5F57" />
+        <circle cx="156" cy="139" r="4" fill="#FFBD2E" />
+        <circle cx="169" cy="139" r="4" fill="#28CA41" />
+        <text x="190" y="143" font-size="8" fill="rgba(255,255,255,0.5)" font-family="monospace">QuickBooks Dashboard —
+          FY 2025</text>
+        <!-- Line chart overlay -->
+        <polyline points="148,220 178,205 208,190 238,200 268,180 298,195 328,170" stroke="#C9A84C" stroke-width="2"
+          fill="none" opacity="0.6" />
+        <!-- Keyboard -->
+        <rect x="150" y="275" width="220" height="40" rx="4" fill="#2A2A3A" opacity="0.9" />
+        <g fill="rgba(255,255,255,0.2)">
+          <rect x="160" y="281" width="12" height="8" rx="1" />
+          <rect x="176" y="281" width="12" height="8" rx="1" />
+          <rect x="192" y="281" width="12" height="8" rx="1" />
+          <rect x="208" y="281" width="12" height="8" rx="1" />
+          <rect x="224" y="281" width="12" height="8" rx="1" />
+          <rect x="240" y="281" width="12" height="8" rx="1" />
+          <rect x="256" y="281" width="12" height="8" rx="1" />
+          <rect x="272" y="281" width="12" height="8" rx="1" />
+          <rect x="288" y="281" width="12" height="8" rx="1" />
+          <rect x="304" y="281" width="12" height="8" rx="1" />
+          <rect x="163" y="293" width="14" height="8" rx="1" />
+          <rect x="181" y="293" width="14" height="8" rx="1" />
+          <rect x="199" y="293" width="14" height="8" rx="1" />
+          <rect x="217" y="293" width="14" height="8" rx="1" />
+          <rect x="235" y="293" width="50" height="8" rx="1" />
+          <rect x="289" y="293" width="14" height="8" rx="1" />
+          <rect x="307" y="293" width="14" height="8" rx="1" />
+        </g>
+        <!-- Documents on desk -->
+        <rect x="420" y="230" width="50" height="30" rx="2" fill="#F5EFE4" opacity="0.9"
+          transform="rotate(-8, 445, 245)" />
+        <rect x="415" y="235" width="50" height="30" rx="2" fill="#E8C97A" opacity="0.7"
+          transform="rotate(-4, 440, 250)" />
+        <rect x="410" y="240" width="50" height="30" rx="2" fill="#FAF7F2" opacity="0.8" />
+        <line x1="416" y1="248" x2="454" y2="248" stroke="rgba(0,0,0,0.15)" stroke-width="1" />
+        <line x1="416" y1="254" x2="454" y2="254" stroke="rgba(0,0,0,0.1)" stroke-width="1" />
+        <line x1="416" y1="260" x2="440" y2="260" stroke="rgba(0,0,0,0.1)" stroke-width="1" />
+        <!-- Coffee mug -->
+        <ellipse cx="72" cy="255" rx="18" ry="8" fill="#3A2E24" />
+        <rect x="54" y="220" width="36" height="35" rx="4" fill="#4A3A2A" />
+        <path d="M90,228 Q104,228 104,240 Q104,252 90,252" stroke="#3A2E24" stroke-width="5" fill="none"
+          stroke-linecap="round" />
+        <!-- Steam -->
+        <path d="M66,215 Q68,208 66,201" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"
+          stroke-linecap="round" />
+        <path d="M72,213 Q74,206 72,199" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"
+          stroke-linecap="round" />
+        <path d="M78,215 Q80,208 78,201" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"
+          stroke-linecap="round" />
+        <!-- Gold accent line at top -->
+        <rect x="0" y="0" width="520" height="4" fill="url(#goldGrad)" rx="2" />
+        <!-- Text labels -->
+        <text x="40" y="360" font-size="10" fill="rgba(255,255,255,0.25)" font-family="monospace">© Crafted for Ahmed
+          Raza · Senior Accountant</text>
+      </svg>
+
+      <div class="about-highlight-card" data-aos="zoom-in" data-aos-delay="300">
+        <span class="big-num">6+</span>
+        <div class="big-label">Years in Finance</div>
+      </div>
+    </div>
+
+    <div class="about-text" data-aos="fade-left">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Finance Expert.<br>Numbers Maestro.</h2>
+      <p>I'm Ahmed Raza, a Senior Accountant based in Mohali with hands-on mastery across QuickBooks Online & Desktop,
+        Tally, Xero, Zoho, Busy, Marg, NetSuite, Navision and various ERP platforms. My expertise spans in Canadian,
+        Australian, US-based corporates and Indian financial ecosystems — from GST
+        reconciliation and TDS filing to T4/T5, tax returns. Australian BAS and IAS returns, Managing SuperFunds, US
+        1099 Form and Tax returns.</p>
+      <p>Currently with <strong>RV International LLP</strong>, I manage end-to-end bookkeeping for restaurant,
+        construction, real estate, and service-based companies. I hold an MBA in Finance from LPU (8.5 GPA) and a B.COM
+        from HPU Shimla with an outstanding 8.86 CGPA.</p>
+      <div class="about-tags">
+        <span class="tag">QuickBooks Online / Desktop</span>
+        <span class="tag">Xero</span>
+        <span class="tag">Zoho</span>
+        <span class="tag">Busy</span>
+        <span class="tag">Marg</span>
+        <span class="tag">NetSuite</span>
+        <span class="tag">Navision</span>
+        <span class="tag">Tally</span>
+        <span class="tag">GST Reconciliation</span>
+        <span class="tag">Payroll Management</span>
+        <span class="tag">TDS Filing</span>
+        <span class="tag">Bank Reconciliation</span>
+        <span class="tag">Year-End Preparation</span>
+        <span class="tag">Pivot Tables</span>
+        <span class="tag">AI Tools</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ VISUAL STRIP ░░ -->
+  <div id="visual-strip">
+    <!-- Panel 1: Financial Globe -->
+    <div class="strip-panel">
+      <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="globeGrad" cx="40%" cy="40%">
+            <stop offset="0%" stop-color="#1B6CA8" />
+            <stop offset="100%" stop-color="#0A1628" />
+          </radialGradient>
+        </defs>
+        <rect width="300" height="320" fill="#0D1B2E" />
+        <circle cx="150" cy="160" r="100" fill="url(#globeGrad)" opacity="0.9" />
+        <!-- Globe lines -->
+        <ellipse cx="150" cy="160" rx="100" ry="30" stroke="rgba(201,168,76,0.3)" stroke-width="1" fill="none" />
+        <ellipse cx="150" cy="160" rx="100" ry="65" stroke="rgba(201,168,76,0.2)" stroke-width="1" fill="none" />
+        <ellipse cx="150" cy="160" rx="40" ry="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none" />
+        <ellipse cx="150" cy="160" rx="80" ry="100" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+        <line x1="150" y1="60" x2="150" y2="260" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+        <line x1="50" y1="160" x2="250" y2="160" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" />
+        <!-- Dots -->
+        <circle cx="120" cy="130" r="5" fill="#C9A84C" />
+        <circle cx="180" cy="145" r="4" fill="#E8C97A" />
+        <circle cx="140" cy="185" r="4" fill="#4AADFF" />
+        <circle cx="170" cy="120" r="3" fill="#C9A84C" />
+        <line x1="120" y1="130" x2="180" y2="145" stroke="rgba(201,168,76,0.5)" stroke-width="1"
+          stroke-dasharray="3,2" />
+        <line x1="180" y1="145" x2="140" y2="185" stroke="rgba(74,173,255,0.5)" stroke-width="1"
+          stroke-dasharray="3,2" />
+      </svg>
+      <div class="strip-label">Global Finance</div>
+    </div>
+
+    <!-- Panel 2: Candlestick Chart -->
+    <div class="strip-panel">
+      <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="320" fill="#0F1E10" />
+        <text x="20" y="36" font-size="11" fill="rgba(255,255,255,0.4)" font-family="monospace">FINANCIAL
+          PERFORMANCE</text>
+        <line x1="20" y1="280" x2="280" y2="280" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+        <!-- Candlesticks -->
+        <g>
+          <!-- green candle -->
+          <line x1="50" y1="180" x2="50" y2="240" stroke="#2D7D46" stroke-width="1.5" />
+          <rect x="42" y="190" width="16" height="40" rx="1" fill="#2D7D46" />
+          <!-- red -->
+          <line x1="90" y1="165" x2="90" y2="235" stroke="#C0392B" stroke-width="1.5" />
+          <rect x="82" y="175" width="16" height="45" rx="1" fill="#C0392B" />
+          <!-- green -->
+          <line x1="130" y1="155" x2="130" y2="220" stroke="#2D7D46" stroke-width="1.5" />
+          <rect x="122" y="160" width="16" height="50" rx="1" fill="#2D7D46" />
+          <!-- green -->
+          <line x1="170" y1="120" x2="170" y2="200" stroke="#2D7D46" stroke-width="1.5" />
+          <rect x="162" y="128" width="16" height="60" rx="1" fill="#2D7D46" />
+          <!-- red -->
+          <line x1="210" y1="130" x2="210" y2="195" stroke="#C0392B" stroke-width="1.5" />
+          <rect x="202" y="140" width="16" height="45" rx="1" fill="#C0392B" />
+          <!-- green -->
+          <line x1="250" y1="100" x2="250" y2="180" stroke="#C9A84C" stroke-width="1.5" />
+          <rect x="242" y="108" width="16" height="58" rx="1" fill="#C9A84C" />
+        </g>
+        <!-- Price line -->
+        <polyline points="50,210 90,200 130,185 170,158 210,165 250,130" stroke="#C9A84C" stroke-width="2" fill="none"
+          opacity="0.6" />
+        <!-- Grid lines -->
+        <line x1="20" y1="120" x2="280" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="20" y1="160" x2="280" y2="160" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="20" y1="200" x2="280" y2="200" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="20" y1="240" x2="280" y2="240" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <text x="20" y="300" font-size="10" fill="rgba(255,255,255,0.25)" font-family="monospace">Q1 Q2 Q3 Q4 Q5
+          Q6</text>
+      </svg>
+      <div class="strip-label">CashFlow and Budget Metrics</div>
+    </div>
+
+    <!-- Panel 3: Balance Sheet Visualization -->
+    <div class="strip-panel">
+      <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="pieGrad1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#C9A84C" />
+            <stop offset="100%" stop-color="#9C7A2E" />
+          </linearGradient>
+          <linearGradient id="pieGrad2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1B6CA8" />
+            <stop offset="100%" stop-color="#0D3F6E" />
+          </linearGradient>
+          <linearGradient id="pieGrad3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2D7D46" />
+            <stop offset="100%" stop-color="#1A5C30" />
+          </linearGradient>
+        </defs>
+        <rect width="300" height="320" fill="#1A0A2E" />
+        <text x="20" y="36" font-size="11" fill="rgba(255,255,255,0.4)" font-family="monospace">ASSET ALLOCATION</text>
+        <!-- Donut chart -->
+        <!-- 35% gold segment (Assets) -->
+        <path d="M150,180 L150,100 A80,80 0 0,1 219,220 Z" fill="url(#pieGrad1)" opacity="0.9" />
+        <!-- 40% blue segment (Liabilities) -->
+        <path d="M150,180 L219,220 A80,80 0 0,1 80,220 Z" fill="url(#pieGrad2)" opacity="0.9" />
+        <!-- 25% green segment (Equity) -->
+        <path d="M150,180 L80,220 A80,80 0 0,1 150,100 Z" fill="url(#pieGrad3)" opacity="0.9" />
+        <!-- Center hole -->
+        <circle cx="150" cy="180" r="42" fill="#1A0A2E" />
+        <text x="150" y="175" text-anchor="middle" font-size="18" font-weight="bold" fill="#C9A84C"
+          font-family="serif">100%</text>
+        <text x="150" y="192" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.5)">Balanced</text>
+        <!-- Legend -->
+        <rect x="30" y="275" width="10" height="10" rx="2" fill="url(#pieGrad1)" />
+        <text x="46" y="284" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">Assets 35%</text>
+        <rect x="115" y="275" width="10" height="10" rx="2" fill="url(#pieGrad2)" />
+        <text x="131" y="284" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">Liabil. 40%</text>
+        <rect x="205" y="275" width="10" height="10" rx="2" fill="url(#pieGrad3)" />
+        <text x="221" y="284" font-size="9" fill="rgba(255,255,255,0.7)" font-family="monospace">Equity 25%</text>
+      </svg>
+      <div class="strip-label">Balance Sheet/P&L Analysis</div>
+    </div>
+
+    <!-- Panel 4: GST / Tax Visual -->
+    <div class="strip-panel">
+      <svg viewBox="0 0 300 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="320" fill="#0A1A1A" />
+        <text x="20" y="36" font-size="11" fill="rgba(255,255,255,0.4)" font-family="monospace">TAX COMPLIANCE
+          SCORE</text>
+        <!-- Gauge arc background -->
+        <path d="M60,220 A90,90 0 0,1 240,220" stroke="rgba(255,255,255,0.08)" stroke-width="18" fill="none"
+          stroke-linecap="round" />
+        <!-- Gauge fill: 92% -->
+        <path d="M60,220 A90,90 0 0,1 237,227" stroke="url(#goldGrad)" stroke-width="18" fill="none"
+          stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="23" />
+        <!-- Gauge needle -->
+        <line x1="150" y1="220" x2="222" y2="145" stroke="#E8C97A" stroke-width="2.5" stroke-linecap="round" />
+        <circle cx="150" cy="220" r="8" fill="#C9A84C" />
+        <circle cx="150" cy="220" r="4" fill="#0A1A1A" />
+        <!-- Score -->
+        <text x="150" y="185" text-anchor="middle" font-size="36" font-weight="bold" fill="#C9A84C"
+          font-family="serif">98%</text>
+        <text x="150" y="205" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.5)"
+          font-family="monospace">Compliance Rate</text>
+        <!-- Labels -->
+        <text x="48" y="248" font-size="9" fill="rgba(255,255,255,0.35)" font-family="monospace">0%</text>
+        <text x="230" y="248" font-size="9" fill="rgba(255,255,255,0.35)" font-family="monospace">100%</text>
+        <!-- Stats row -->
+        <rect x="20" y="264" width="80" height="36" rx="3" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.2)"
+          stroke-width="1" />
+        <text x="60" y="279" text-anchor="middle" font-size="10" fill="#C9A84C" font-family="monospace">GST</text>
+        <text x="60" y="293" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)"
+          font-family="monospace">Tracked</text>
+        <rect x="110" y="264" width="80" height="36" rx="3" fill="rgba(27,108,168,0.1)" stroke="rgba(27,108,168,0.2)"
+          stroke-width="1" />
+        <text x="150" y="279" text-anchor="middle" font-size="10" fill="#4AADFF" font-family="monospace">TDS</text>
+        <text x="150" y="293" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)"
+          font-family="monospace">Filed</text>
+        <rect x="200" y="264" width="80" height="36" rx="3" fill="rgba(45,125,70,0.1)" stroke="rgba(45,125,70,0.2)"
+          stroke-width="1" />
+        <text x="240" y="279" text-anchor="middle" font-size="10" fill="#4ADE80" font-family="monospace">PF/ESI</text>
+        <text x="240" y="293" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)"
+          font-family="monospace">Compliant</text>
+      </svg>
+      <div class="strip-label">Tax Preparation</div>
+    </div>
+  </div>
+
+  <!-- ░░ EXPERIENCE ░░ -->
+  <section id="experience" style="background:var(--cream); padding:100px 60px;">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Work History</div>
+        <h2 class="section-title">Professional<br>Experience</h2>
+        <p class="section-sub">Over six years of progressive responsibility across diverse industries and international
+          financial frameworks.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- 1 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-company">RV International LLP</div>
+                <div class="timeline-role">Senior Accountant</div>
+              </div>
+              <div class="timeline-period">Nov 2023 — Present</div>
+            </div>
+            <p class="timeline-desc">Managing complete QuickBooks Online & Desktop bookkeeping lifecycle for clients
+              across restaurant, construction, real estate, and product-based sectors. Handles bank & loan
+              reconciliation, payroll administration, year-end preparation, GST tracking & reconciliation, T4/T5 tax
+              filing, and P&L / Balance Sheet accuracy reviews. Manages AP/AR and resolves Trial Balance discrepancies.
+            </p>
+            <div class="timeline-skills">
+              <span class="skill-chip">QuickBooks Online/Desktop</span>
+              <span class="skill-chip">Bank Reconciliation</span>
+              <span class="skill-chip">GST Reconciliation</span>
+              <span class="skill-chip">T4/T5 Filing</span>
+              <span class="skill-chip">Payroll</span>
+              <span class="skill-chip">AP/AR</span>
+            </div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-company">One O Cricket</div>
+                <div class="timeline-role">Senior Accountant</div>
+              </div>
+              <div class="timeline-period">Nov 2022 — Oct 2023</div>
+            </div>
+            <p class="timeline-desc">Handled bank & loan reconciliation, payroll, year-end preparation, GST tracking,
+              PF, ESI, and TDS filing. Advanced Excel proficiency: V-Lookup, H-Lookup, Pivot Tables, and financial data
+              sorting formulas. Managed E-Way Bill and E-Invoicing compliance.</p>
+            <div class="timeline-skills">
+              <span class="skill-chip">TDS Filing</span>
+              <span class="skill-chip">PF / ESI</span>
+              <span class="skill-chip">Advanced Excel</span>
+              <span class="skill-chip">E-Way Bill</span>
+              <span class="skill-chip">E-Invoicing</span>
+              <span class="skill-chip">Pivot Tables</span>
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-company">Byjus</div>
+                <div class="timeline-role">Accounts Executive</div>
+              </div>
+              <div class="timeline-period">Apr 2022 — Oct 2022</div>
+            </div>
+            <p class="timeline-desc">Managed accounts receivables pipeline, created and processed invoices and billings,
+              ensured timely payment receipts, and maintained precise financial records. Contributed to improving
+              collections efficiency.</p>
+            <div class="timeline-skills">
+              <span class="skill-chip">Accounts Receivable</span>
+              <span class="skill-chip">Invoice Creation</span>
+              <span class="skill-chip">Payment Processing</span>
+              <span class="skill-chip">Financial Records</span>
+            </div>
+          </div>
+        </div>
+        <!-- 4 -->
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-company">CA Firm (Part-Time)</div>
+                <div class="timeline-role">Accounts Assistant</div>
+              </div>
+              <div class="timeline-period">Mar 2018 — Mar 2022</div>
+            </div>
+            <p class="timeline-desc">Foundation-level accounting practice: journal entries, auditing support, purchase
+              and sale entries, and preparation of balance sheets, profit & loss statements, and trading accounts under
+              a Chartered Accountant's guidance.</p>
+            <div class="timeline-skills">
+              <span class="skill-chip">Journal Entries</span>
+              <span class="skill-chip">Auditing</span>
+              <span class="skill-chip">Balance Sheet</span>
+              <span class="skill-chip">P&L Statements</span>
+              <span class="skill-chip">Trading Accounts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SKILLS ░░ -->
+  <section id="skills">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Competencies</div>
+        <h2 class="section-title">Skills &amp; Expertise</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.55);">A blended toolkit of technical accounting
+          expertise, ERP mastery, and modern AI-augmented workflows.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Card 1: Technical Tools -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="skill-cat-title">⚙️ Technical Tools</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>QuickBooks Online/Desktop</span><span>95%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Tally ERP</span><span>90%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Advanced Excel</span><span>88%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>AI Tools & Prompt Engineering</span><span>80%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="80"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Accounting -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-cat-title">📊 Accounting Expertise</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Bank & Loan Reconciliation</span><span>97%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="97"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>GST / TDS Compliance</span><span>93%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="93"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Payroll Management</span><span>90%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Year-End Preparation</span><span>92%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Soft Skills -->
+        <div class="skill-category-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="skill-cat-title">🧠 Intellectual Skills</div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Communication</span><span>92%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Team Building & Management</span><span>88%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Problem Solving</span><span>90%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Decision Making</span><span>85%</span></div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" data-width="85"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ TESTIMONIALS ░░ -->
+  <section id="testimonials" style="background: var(--white); padding: 100px 60px;">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Endorsements</div>
+        <h2 class="section-title">Client &amp; Colleague<br>Testimonials</h2>
+        <p class="section-sub">Real feedback from founders, finance heads, payroll managers, and chartered accountants
+          validating end-to-end accounting and tax excellence.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1: One O Cricket -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="quote-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2z"
+                fill="var(--gold)" opacity="0.15"></path>
+            </svg>
+          </div>
+          <p class="testimonial-quote">“Highly dependable Accounts Manager with strong financial analysis and reporting
+            capabilities.”</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="author-name">Founder</div>
+            <div class="author-role">One O Cricket</div>
+          </div>
+          <div class="testimonial-contact">
+            <a href="mailto:contactoneocricket@gmail.com">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              contactoneocricket@gmail.com
+            </a>
+            <a href="tel:+917973531671">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.18 19.79 19.79 0 01.01 2.6 2 2 0 012 .42h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.06a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15z">
+                </path>
+              </svg>
+              +91 79735 31671
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial 2: RV International LLP -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="quote-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2z"
+                fill="var(--gold)" opacity="0.15"></path>
+            </svg>
+          </div>
+          <p class="testimonial-quote">“Efficient in managing accounts, reconciliations, taxation, and financial
+            reporting with excellent organizational skills.”</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="author-name">Aditya Tohan</div>
+            <div class="author-role">Finance Head, RV International LLP</div>
+          </div>
+          <div class="testimonial-contact">
+            <a href="mailto:rvinternationallp@gmail.com">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              rvinternationallp@gmail.com
+            </a>
+            <a href="tel:+12269619170">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.18 19.79 19.79 0 01.01 2.6 2 2 0 012 .42h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.06a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15z">
+                </path>
+              </svg>
+              +1 (226) 961-9170
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial 3: Byju's Noida -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="quote-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2z"
+                fill="var(--gold)" opacity="0.15"></path>
+            </svg>
+          </div>
+          <p class="testimonial-quote">“Demonstrated exceptional leadership skills and strong attention to detail.
+            Consistently ensured timely completion of accounts and compliance processes.”</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="author-name">Shubham Goel</div>
+            <div class="author-role">Payroll Manager, Byju’s Noida</div>
+          </div>
+          <div class="testimonial-contact">
+            <a href="tel:+917560012825">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.18 19.79 19.79 0 01.01 2.6 2 2 0 012 .42h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.06a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15z">
+                </path>
+              </svg>
+              +91 75600-12825
+            </a>
+          </div>
+        </div>
+
+        <!-- Testimonial 4: Amit Sharma -->
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="quote-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h4c0 3-2 5-5 6v2z"
+                fill="var(--gold)" opacity="0.15"></path>
+            </svg>
+          </div>
+          <p class="testimonial-quote">“Maintained strong relationships with clients and vendors while ensuring accurate
+            billing, reconciliations, and timely payment processing.”</p>
+          <div class="testimonial-divider"></div>
+          <div class="testimonial-author">
+            <div class="author-name">Amit Sharma</div>
+            <div class="author-role">Chartered Accountant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ EDUCATION ░░ -->
+  <section id="education">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Academic Background</div>
+        <h2 class="section-title">Education</h2>
+        <p class="section-sub">Strong academic foundation with consistently outstanding grades across all levels of
+          study.</p>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="edu-icon">🏦</div>
+          <div class="edu-year">2026</div>
+          <div class="edu-degree">Pursuing Chartered Accountant</div>
+          <div class="edu-uni">ICAI Delhi</div>
+          <div class="edu-grade">
+            <span class="grade-num">Inter</span>
+            <span class="grade-label">In Process</span>
+          </div>
+        </div>
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-year">2025</div>
+          <div class="edu-degree">MBA in Finance</div>
+          <div class="edu-uni">Lovely Professional University (LPU)</div>
+          <div class="edu-grade">
+            <span class="grade-num">8.5</span>
+            <span class="grade-label">GPA</span>
+          </div>
+        </div>
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="edu-icon">📚</div>
+          <div class="edu-year">2022</div>
+          <div class="edu-degree">B.COM</div>
+          <div class="edu-uni">Himachal Pradesh University, Shimla</div>
+          <div class="edu-grade">
+            <span class="grade-num">8.86</span>
+            <span class="grade-label">CGPA</span>
+          </div>
+        </div>
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="edu-icon">📝</div>
+          <div class="edu-year">2018</div>
+          <div class="edu-degree">10+2</div>
+          <div class="edu-uni">HP Board</div>
+          <div class="edu-grade">
+            <span class="grade-num">80.4</span>
+            <span class="grade-label">%</span>
+          </div>
+        </div>
+        <div class="edu-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-year">2016</div>
+          <div class="edu-degree">Class 10</div>
+          <div class="edu-uni">Himachal Board</div>
+          <div class="edu-grade">
+            <span class="grade-num">90.7</span>
+            <span class="grade-label">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ METRICS ░░ -->
+  <section id="metrics">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Data at a Glance</div>
+        <h2 class="section-title">Performance<br>Metrics</h2>
+        <p class="section-sub">Visualizing professional experience, academic excellence, and skill depth.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <!-- Education Score Chart -->
+        <div class="chart-container" data-aos="fade-right">
+          <div class="chart-title">Academic Performance Timeline</div>
+          <canvas id="eduChart" width="400" height="260"></canvas>
+        </div>
+
+        <!-- Skills Radar -->
+        <div class="chart-container" data-aos="fade-left">
+          <div class="chart-title">Core Competency Breakdown</div>
+          <canvas id="skillChart" width="400" height="260"></canvas>
+        </div>
+
+        <!-- Experience bar chart -->
+        <div class="chart-container" data-aos="fade-right">
+          <div class="chart-title">Industry Exposure (Months)</div>
+          <canvas id="expChart" width="400" height="260"></canvas>
+        </div>
+
+        <!-- Tool proficiency -->
+        <div class="chart-container" data-aos="fade-left">
+          <div class="chart-title">Key Domain Expertise</div>
+          <div class="expertise-list">
+            <div class="exp-item">
+              <div class="exp-icon-dot">💰</div>
+              <div class="exp-item-text">
+                <div class="exp-item-label">Financial Reporting & Compliance</div>
+                <div class="exp-item-sub">GST, TDS, T4/T5, Year-End Prep</div>
+                <div class="exp-bar">
+                  <div class="exp-bar-fill" data-width="95"></div>
+                </div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-icon-dot">🖥️</div>
+              <div class="exp-item-text">
+                <div class="exp-item-label">ERP & Accounting Software</div>
+                <div class="exp-item-sub">QuickBooks, Tally, Customized ERP</div>
+                <div class="exp-bar">
+                  <div class="exp-bar-fill" data-width="92"></div>
+                </div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-icon-dot">📊</div>
+              <div class="exp-item-text">
+                <div class="exp-item-label">Data Analysis (Excel / AI)</div>
+                <div class="exp-item-sub">Pivot Tables, V/H Lookup, AI Tools</div>
+                <div class="exp-bar">
+                  <div class="exp-bar-fill" data-width="85"></div>
+                </div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-icon-dot">🏗️</div>
+              <div class="exp-item-text">
+                <div class="exp-item-label">Multi-Industry Experience</div>
+                <div class="exp-item-sub">Restaurant, Construction, Real Estate, Ed-Tech</div>
+                <div class="exp-bar">
+                  <div class="exp-bar-fill" data-width="88"></div>
+                </div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-icon-dot">🌍</div>
+              <div class="exp-item-text">
+                <div class="exp-item-label">International Finance (Canada + India)</div>
+                <div class="exp-item-sub">Cross-border bookkeeping & tax systems</div>
+                <div class="exp-bar">
+                  <div class="exp-bar-fill" data-width="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ACHIEVEMENTS ░░ -->
+  <section id="achievements" style="background:var(--white);">
+    <div class="section-inner">
+      <div data-aos="fade-up">
+        <div class="section-label">Milestones</div>
+        <h2 class="section-title">Achievements &amp;<br>Awards</h2>
+        <p class="section-sub">Recognition beyond the spreadsheet — leadership, service, and excellence.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card" data-aos="zoom-in" data-aos-delay="50"
+          onclick="openCertModal('Certificates/Ahmed%20L1%20Certified_page-0001.jpg')">
+          <img src="Certificates/Ahmed%20L1%20Certified_page-0001.jpg" alt="Ahmed L1 Certified">
+          <div class="cert-overlay">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>View Certificate</span>
+          </div>
+        </div>
+        <div class="cert-card" data-aos="zoom-in" data-aos-delay="100"
+          onclick="openCertModal('Certificates/L2%20Xero%20certification%20Ahmed_page-0001.jpg')">
+          <img src="Certificates/L2%20Xero%20certification%20Ahmed_page-0001.jpg" alt="L2 Xero Certification">
+          <div class="cert-overlay">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>View Certificate</span>
+          </div>
+        </div>
+        <div class="cert-card" data-aos="zoom-in" data-aos-delay="150"
+          onclick="openCertModal('Certificates/QuickBooksOnlineCertification%20-%20Ahmed%20Raza_page-0001.jpg')">
+          <img src="Certificates/QuickBooksOnlineCertification%20-%20Ahmed%20Raza_page-0001.jpg"
+            alt="QuickBooks Online Certification">
+          <div class="cert-overlay">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>View Certificate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONTACT ░░ -->
+  <section id="contact">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-cards">
+      <a href="tel:8580436591" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.18 19.79 19.79 0 01.01 2.6 2 2 0 012 .42h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.06a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15z" />
+          </svg>
+        </div>
+        <div class="contact-card-info">
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+91 85804 36591</div>
+        </div>
+      </a>
+      <a href="mailto:khansahab786123@gmail.com" class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </div>
+        <div class="contact-card-info">
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">khansahab786123@gmail.com</div>
+        </div>
+      </a>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+        </div>
+        <div class="contact-card-info">
+          <div class="contact-card-label">Location</div>
+          <div class="contact-card-value">Phase 05, Shahi Majra, Sector 58, Mohali</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cert-modal" id="certModal" onclick="closeCertModal()">
+    <div class="cert-modal-content" onclick="event.stopPropagation()">
+      <button class="cert-modal-close" onclick="closeCertModal()">&times;</button>
+      <img id="certModalImg" src="" alt="Certificate Full View">
+    </div>
+  </div>
+
+  <footer>
+    <span>Ahmed Raza</span> · Senior Accountant &amp; Finance Professional · Mohali
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // ─── AOS INIT ───
+    AOS.init({ duration: 800, once: true, offset: 80 });
+
+    // ─── MOBILE MENU ───
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+      const spans = menuToggle.querySelectorAll('span');
+      spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+      spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+      spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(7px, -7px)' : '';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+        const spans = menuToggle.querySelectorAll('span');
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = '1'; });
+      });
+    });
+
+    // ─── CERTIFICATE MODAL ───
+    function openCertModal(src) {
+      document.getElementById('certModalImg').src = src;
+      document.getElementById('certModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeCertModal() {
+      document.getElementById('certModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ─── COUNTER ANIMATION ───
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count);
+      let count = 0;
+      const step = Math.ceil(target / 30);
+      const interval = setInterval(() => {
+        count = Math.min(count + step, target);
+        el.textContent = count + '+';
+        if (count >= target) clearInterval(interval);
+      }, 50);
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => observer.observe(el));
+
+    // ─── SKILL BARS ANIMATION ───
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          e.target.querySelectorAll('.exp-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width + '%';
+          });
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.skill-category-card, .chart-container').forEach(el => barObserver.observe(el));
+
+    // ─── CHARTS (vanilla canvas) ───
+    window.addEventListener('load', () => {
+      // Education Chart
+      const eduCanvas = document.getElementById('eduChart');
+      if (eduCanvas) {
+        const ctx = eduCanvas.getContext('2d');
+        const W = eduCanvas.width, H = eduCanvas.height;
+        const data = [
+          { label: 'Class 10', score: 90.71, color: '#C9A84C' },
+          { label: '10+2', score: 80.4, color: '#1B6CA8' },
+          { label: 'B.COM', score: 88.6, color: '#2D7D46' },
+          { label: 'MBA', score: 85, color: '#C9A84C' },
+          { label: 'CA', score: 90, color: '#1B6CA8' }
+        ];
+        const maxScore = 100;
+        const padL = 60, padR = 20, padT = 20, padB = 60;
+        const chartW = W - padL - padR, chartH = H - padT - padB;
+        const barW = chartW / data.length * 0.5;
+        const gap = chartW / data.length;
+
+        // Grid lines
+        ctx.strokeStyle = 'rgba(0,0,0,0.06)';
+        ctx.lineWidth = 1;
+        [25, 50, 75, 100].forEach(v => {
+          const y = padT + chartH - (v / maxScore) * chartH;
+          ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(W - padR, y); ctx.stroke();
+          ctx.fillStyle = '#999'; ctx.font = '10px DM Sans'; ctx.textAlign = 'right';
+          ctx.fillText(v + '%', padL - 6, y + 4);
+        });
+
+        // Bars with gradient
+        data.forEach((d, i) => {
+          const x = padL + i * gap + gap / 2 - barW / 2;
+          const barH = (d.score / maxScore) * chartH;
+          const y = padT + chartH - barH;
+
+          const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+          grad.addColorStop(0, d.color);
+          grad.addColorStop(1, d.color + '66');
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.roundRect(x, y, barW, barH, [4, 4, 0, 0]);
+          ctx.fill();
+
+          // Score label on bar
+          ctx.fillStyle = '#1A1A2E'; ctx.font = 'bold 11px DM Sans'; ctx.textAlign = 'center';
+          ctx.fillText(d.score + '%', x + barW / 2, y - 6);
+
+          // X label
+          ctx.fillStyle = '#6B7280'; ctx.font = '11px DM Sans';
+          ctx.fillText(d.label, x + barW / 2, H - padB + 18);
+        });
+
+        // Trend line
+        ctx.strokeStyle = '#C9A84C'; ctx.lineWidth = 2;
+        ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        data.forEach((d, i) => {
+          const x = padL + i * gap + gap / 2;
+          const y = padT + chartH - (d.score / maxScore) * chartH;
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.stroke(); ctx.setLineDash([]);
+      }
+
+      // Skills Radar
+      const skillCanvas = document.getElementById('skillChart');
+      if (skillCanvas) {
+        const ctx = skillCanvas.getContext('2d');
+        const W = skillCanvas.width, H = skillCanvas.height;
+        const cx = W / 2, cy = H / 2 + 10;
+        const R = Math.min(W, H) / 2 - 40;
+        const skills = [
+          { label: 'Bookkeeping', val: 0.95 },
+          { label: 'Reconciliation', val: 0.97 },
+          { label: 'Tax Filing', val: 0.93 },
+          { label: 'Payroll', val: 0.90 },
+          { label: 'Excel/ERP', val: 0.88 },
+          { label: 'Communication', val: 0.92 }
+        ];
+        const n = skills.length;
+
+        // Rings
+        [0.25, 0.5, 0.75, 1.0].forEach(r => {
+          ctx.strokeStyle = r === 1.0 ? 'rgba(201,168,76,0.3)' : 'rgba(0,0,0,0.07)';
+          ctx.lineWidth = r === 1.0 ? 1.5 : 1;
+          ctx.beginPath();
+          for (let i = 0; i < n; i++) {
+            const angle = (i / n) * 2 * Math.PI - Math.PI / 2;
+            const x = cx + r * R * Math.cos(angle);
+            const y = cy + r * R * Math.sin(angle);
+            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+          }
+          ctx.closePath(); ctx.stroke();
+        });
+
+        // Spokes
+        skills.forEach((s, i) => {
+          const angle = (i / n) * 2 * Math.PI - Math.PI / 2;
+          ctx.strokeStyle = 'rgba(0,0,0,0.08)'; ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(cx + R * Math.cos(angle), cy + R * Math.sin(angle));
+          ctx.stroke();
+        });
+
+        // Data polygon
+        ctx.fillStyle = 'rgba(201,168,76,0.15)';
+        ctx.strokeStyle = '#C9A84C'; ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        skills.forEach((s, i) => {
+          const angle = (i / n) * 2 * Math.PI - Math.PI / 2;
+          const x = cx + s.val * R * Math.cos(angle);
+          const y = cy + s.val * R * Math.sin(angle);
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.closePath(); ctx.fill(); ctx.stroke();
+
+        // Dots
+        skills.forEach((s, i) => {
+          const angle = (i / n) * 2 * Math.PI - Math.PI / 2;
+          const x = cx + s.val * R * Math.cos(angle);
+          const y = cy + s.val * R * Math.sin(angle);
+          ctx.fillStyle = '#C9A84C';
+          ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2); ctx.fill();
+
+          // Labels
+          const lx = cx + (R + 20) * Math.cos(angle);
+          const ly = cy + (R + 20) * Math.sin(angle);
+          ctx.fillStyle = '#2E3A59'; ctx.font = '10px DM Sans'; ctx.textAlign = 'center';
+          ctx.fillText(s.label, lx, ly + 4);
+        });
+      }
+
+      // Experience Chart
+      const expCanvas = document.getElementById('expChart');
+      if (expCanvas) {
+        const ctx = expCanvas.getContext('2d');
+        const W = expCanvas.width, H = expCanvas.height;
+        const data = [
+          { label: 'CA Firm', months: 24, color: '#C9A84C' },
+          { label: 'Byjus', months: 6, color: '#1B6CA8' },
+          { label: 'One O Cricket', months: 12, color: '#2D7D46' },
+          { label: 'RV Intl.', months: 18, color: '#C9A84C' }
+        ];
+        const max = Math.max(...data.map(d => d.months));
+        const padL = 100, padR = 40, padT = 20, padB = 30;
+        const chartW = W - padL - padR;
+        const rowH = (H - padT - padB) / data.length;
+
+        data.forEach((d, i) => {
+          const y = padT + i * rowH + rowH / 2 - 14;
+          const barH = 20;
+          const barW = (d.months / max) * chartW;
+
+          const grad = ctx.createLinearGradient(padL, 0, padL + barW, 0);
+          grad.addColorStop(0, d.color);
+          grad.addColorStop(1, d.color + '88');
+          ctx.fillStyle = grad;
+          ctx.beginPath(); ctx.roundRect(padL, y, barW, barH, 3); ctx.fill();
+
+          // Label
+          ctx.fillStyle = '#2E3A59'; ctx.font = '11px DM Sans'; ctx.textAlign = 'right';
+          ctx.fillText(d.label, padL - 8, y + 14);
+
+          // Value
+          ctx.fillStyle = '#fff'; ctx.font = 'bold 11px DM Sans'; ctx.textAlign = 'left';
+          if (barW > 40) ctx.fillText(d.months + ' mo', padL + 8, y + 14);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
